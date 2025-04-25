@@ -10,7 +10,7 @@
 ## **Table of Contents**
 1. [Introduction](#introduction)
 2. [What is GitOps](#what-is-gitops)
-3. [Why GitOps?](why-gitops)
+3. [Why GitOps?](#why-gitops)
 4. [Popular GitOps Tools](popular-gitops-tools)
 5. [Comparison of GitOps Tools](comparison-of-gitops-tools)
 6. [Conclusion](#conclusion)
