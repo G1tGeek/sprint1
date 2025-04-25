@@ -59,7 +59,7 @@ There are several popular tools used in GitOps practices. Below are some of the 
 
 Among the various tools evaluated, **Argo CD** stands out as the most well-rounded GitOps solution. It offers a strong balance of user-friendly UI, Kubernetes-native integration, scalability, and extensibility, making it the best choice for teams looking to implement GitOps effectively and efficiently.
 
-## Contact Information
+## Contact
 | Name         | Email Address                                 |
 |--------------|-----------------------------------------------|
 | Yuvraj Singh | yuvraj.singh.snaatak@mygurukulam.co           |
