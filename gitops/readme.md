@@ -46,14 +46,17 @@ There are several popular tools used in GitOps practices. Below are some of the 
 
 ## Comparison of GitOps Tools
 
-| Tool           | Kubernetes Native | UI Support | Multi-cluster | Helm Support | Custom Resource Sync | Scalability | Ease of Use |
-|----------------|-------------------|-------------|----------------|---------------|-----------------------|--------------|-------------|
-| **Argo CD**     | Yes               | Yes         | Yes            | Yes           | Yes                   | High         | Easy        |
-| **Flux**        | Yes               | Limited     | Yes            | Yes           | Yes                   | High         | Moderate    |
-| **Jenkins X**   | Yes               | Limited     | Yes            | Yes           | Yes                   | Moderate     | Complex     |
-| **Spinnaker**   | Partial           | Yes         | Yes            | Limited       | Yes                   | High         | Moderate    |
-| **Fleet**       | Yes               | Yes         | Yes            | Yes           | Yes                   | Very High    | Moderate    |
-| **Weave GitOps**| Yes               | Yes         | Yes            | Yes           | Yes                   | High         | Easy        |
+# GitOps Tool Comparison Table
+
+| Tool            | Kubernetes Native | UI Support | Multi-cluster | Helm Support | Custom Resource Sync | Sync Policy       | Integration              | Scalability     | Ease of Use                   | Installation         | Pricing                    | Best For                        |
+|-----------------|-------------------|------------|----------------|---------------|-----------------------|-------------------|---------------------------|------------------|--------------------------------|------------------------|-----------------------------|----------------------------------|
+| **Argo CD**     | Yes               | Yes        | Yes            | Yes           | Yes                   | Manual or auto    | Kubernetes-native         | High             | User-friendly GUI             | Moderate complexity   | Open-source & paid options | Enterprises needing GUI         |
+| **Flux**        | Yes               | Limited    | Yes            | Yes           | Yes                   | Fully automatic   | Kubernetes-native         | High             | Lightweight CLI               | Simple setup          | Fully open-source           | Lightweight users               |
+| **Jenkins X**   | Yes               | Limited    | Yes            | Yes           | Yes                   | Configurable      | For Kubernetes            | Moderate         | Moderate complexity           | Complex               | Fully open-source           | CI/CD for Kubernetes            |
+| **Fleet**       | Yes               | Yes        | Yes            | Yes           | Yes                   | Fully automatic   | Focused on clusters       | Very High        | GUI & CLI options             | Moderate setup         | Fully open-source           | Multi-cluster setups            |
+| **Spinnaker**   | Partial           | Yes        | Yes            | Limited       | Yes                   | Configurable      | Multi-cloud flexibility   | High             | GUI-based, steep learning curve | High complexity       | Free & enterprise           | Large organizations             |
+| **Weave GitOps**| Yes               | Yes        | Yes            | Yes           | Yes                   | —                 | —                         | High             | Easy                           | —                     | —                           | —                                |
+
 
 ## Conclusion
 
