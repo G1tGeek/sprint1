@@ -1,0 +1,175 @@
+
+# GitHub Setup Documentation
+
+![logo](https://miro.medium.com/v2/resize:fit:1125/1*E-TJsd6C1rwWMiiLJt5xxA.png)
+
+### Author
+| Created     | Version | Author        | Modifed | Comment           | Reviewer   |
+|-------------|---------|---------------|-------|------------|------------------|
+| 27-04-2025  | V1      | Yuvraj Singh |  | Internal Review   | Siddharth Pawar  |
+
+---
+
+## Table of Contents
+
+1. [Introduction](#introduction)
+2. [Purpose](#purpose)
+3. [Key Features](#key-features)
+4. [Getting Started](#getting-started)
+    - [Pre-requisites](#pre-requisites)
+5. [Software Overview](#software-overview)
+6. [System Requirement](#system-requirement)
+7. [Important Ports](#important-ports)
+8. [Dependencies](#dependencies)
+    - [Run-time Dependency](#run-time-dependency)
+    - [Other Dependency](#other-dependency)
+9. [How to Setup/Install GitHub](#how-to-setupinstall-github)
+10. [Configuration](#configuration)
+11. [Conclusion](#conclusion)
+12. [Contact](#contact)
+13. [References](#references)
+---
+
+## Introduction
+
+This document provides a structured guide for setting up GitHub, a widely used cloud-based version control and collaboration platform. It is designed following a software documentation template to ensure clarity, organization, and ease of understanding for users and teams establishing their GitHub workflows.
+
+## Purpose
+
+The purpose of this documentation is to demonstrate how GitHub can be effectively used to manage source code, collaborate with teams, automate workflows, and maintain project version control in a systematic and efficient manner.
+
+## Key Features
+
+- **Distributed Version Control**: Track and manage changes across multiple contributors with ease.
+- **Collaboration Tools**: Pull requests, code reviews, and team discussions built into the platform.
+- **Automation and CI/CD**: GitHub Actions enable automated testing, building, and deployment pipelines.
+- **Security and Compliance**: Features like Dependabot alerts, branch protection rules, and secret scanning.
+- **Extensive Integration**: Supports integration with third-party tools like Jenkins, Slack, Jira, and many more.
+- **Hosting and Documentation**: Free hosting for repositories and built-in GitHub Pages for project documentation.
+
+## Getting Started
+
+### Pre-requisites
+
+| License Type        | Description                                             | Commercial Use | Open Source |
+|---------------------|---------------------------------------------------------|----------------|-------------|
+| GitHub Free / Paid Plans | Offers free public/private repositories; paid plans offer more features. | Yes            | Yes         |
+
+## Software Overview
+
+| Software | Version |
+|----------|---------|
+| Git      | 2.43.0 (or latest stable) |
+| GitHub   | Web-based service (always latest) |
+
+## System Requirement
+
+| Requirement           | Minimum Recommendation            |
+|------------------------|-----------------------------------|
+| Processor/Instance Type | Dual-Core / T2.micro instance      |
+| RAM                    | 2 Gigabytes or Higher             |
+| ROM (Disk Space)       | 5 Gigabytes or Higher             |
+| OS Required            | Linux (Ubuntu 20.04 or later) / Windows 10 or later / macOS |
+
+## Important Ports
+
+| Ports | Description |
+|-------|-------------|
+| 443   | Used for secure HTTPS connection to GitHub servers. |
+| 22    | (Optional) Used for SSH connection to GitHub repositories. |
+
+## Dependencies
+
+### Run-time Dependency
+
+| Run-time Dependency | Version | Description                                  |
+|---------------------|---------|----------------------------------------------|
+| Git                 | 2.43.0  | Required to manage repositories locally.     |
+
+### Other Dependency
+
+| Other Dependency | Version | Description                   |
+|------------------|---------|-------------------------------|
+| OpenSSH          | 8.0+    | Needed for SSH authentication to GitHub. |
+
+## How to Setup/Install GitHub
+
+### Step-by-Step Installation Instructions
+
+1. **Update your system** 
+[Go to this link for ubuntu basic commands.](https://github.com/snaatak-Downtime-Crew/Documentation/blob/main/common_stack/operating_system/ubuntu/sop/commoncommands/README.md#1-basic-system-commands)
+
+2. **Install Git**:
+
+   ```
+   sudo apt install git && git --version
+   ```
+
+4. **Create a GitHub Account**:
+
+   - Visit [https://github.com/](https://github.com/) and sign up.
+
+6. **Configure Git Locally**:
+
+   ```
+   git config --global user.name "Your Name"
+   git config --global user.email "youremail@example.com"
+   ```
+
+8. **Generate and Add SSH Key (Recommended)**:
+
+   ```
+   ssh-keygen -t ed25519 -C "youremail@example.com"
+   ```
+   - Copy the public key and add it to GitHub → Settings → SSH and GPG keys.
+
+10. **Clone or Create a Repository**:
+   
+   ```
+   git clone git@github.com:username/repository.git
+   ```
+
+11. **Basic Git Commands**:
+   
+   - `git add .` → Add changes
+   - `git commit -m "your message"` → Commit changes
+   - `git push origin main` → Push changes to GitHub
+
+## Configuration
+
+Configuration refers to setting up Git locally and linking it securely to GitHub.
+
+- Set default branch name (optional):
+  ```
+  git config --global init.defaultBranch main
+  ```
+- Setup credential helper for GitHub CLI authentication:
+  ```
+  gh auth login
+  ```
+- (Optional) Set custom Git aliases for faster workflows:
+  ```bash
+  git config --global alias.co checkout
+  git config --global alias.br branch
+  git config --global alias.cm commit
+  ```
+
+## Conclusion
+ Configuring Git and GitHub properly does not only improves productivity but also enhances code security, traceability, and project scalability. Whether working individually or within a team, GitHub's ecosystem empowers developers to build, test, and deploy projects with greater confidence and agility.
+
+## Contact
+
+| Name| Email Address      |
+|-----|--------------------------|
+| Yuvraj Singh | yuvraj.singh.snaatak@mygurukulam.co |
+
+
+## References
+
+| Source                                                                                     | Description                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------ |
+| GitHub Official Documentation | [visit](https://docs.github.com/en) |
+| Pro Git Book | [visit](https://git-scm.com/book/en/v2) |
+| GitHub CLI Documentation | [visit](https://cli.github.com/manual/) | 
+| Git Installation Guide | [visit](https://git-scm.com/downloads) | 
+| GitHub SSH Key Setup Guide | [visit](https://docs.github.com/en/authentication/connecting-to-github-with-ssh) | 
