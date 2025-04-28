@@ -35,6 +35,8 @@ This guide focuses on the process of creating Pull Requests using both the GitHu
 
 ## Pull Request via GitHub GUI (Web Interface)
 
+In this section, we demonstrate how to initiate and manage pull requests using the GitHub web interface. By following the intuitive web-based workflow, you can propose, review, and merge code changes without leaving your browser, making it ideal for users who prefer graphical tools and visual feedback.
+
 ### Step 1: Clone a GitHub Repository
 
 ```
@@ -80,6 +82,8 @@ Pull Request creation is complete.
 ---
 
 ## Pull Request via GitHub CLI (`gh`)
+
+This section covers the creation of pull requests through the GitHub Command Line Interface. The gh tool enables developers to create, view, and manage pull requests directly from the terminal, offering a fast, scriptable, and automation-friendly approach to code collaboration.
 
 ### Step 1: Install and Authenticate GitHub CLI
 Install:
