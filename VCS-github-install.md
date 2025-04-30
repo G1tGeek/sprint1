@@ -12,44 +12,66 @@
 
 ## Table of Contents
 
-1. [Introduction](#introduction)
-2. [Purpose](#purpose)
-3. [Key Features](#key-features)
-4. [Getting Started](#getting-started)
-    - [Pre-requisites](#pre-requisites)
-5. [Software Overview](#software-overview)
-6. [System Requirement](#system-requirement)
-7. [Important Ports](#important-ports)
-8. [Dependencies](#dependencies)
-    - [Run-time Dependency](#run-time-dependency)
-    - [Other Dependency](#other-dependency)
-9. [How to Setup/Install GitHub](#how-to-setupinstall-github)
-10. [Configuration](#configuration)
-11. [Conclusion](#conclusion)
-12. [Contact](#contact)
-13. [References](#references)
+<details>
+<summary>1. Introduction</summary>
+
+- [Introduction](#introduction)  
+- [What is GitHub](#what-is-github)  
+- [Why GitHub](#why-github)
+
+</details>
+
+<details>
+<summary>2. Requirements</summary>
+
+- [Pre-requisites](#pre-requisites)  
+- [Software Overview](#software-overview)  
+- [System Requirement](#system-requirement)  
+- [Important Ports](#important-ports)
+
+<details>
+  <summary>Dependencies</summary>
+
+  - [Run-time Dependency](#run-time-dependency)  
+  - [Other Dependency](#other-dependency)
+
+</details>
+
+</details>
+
+<details>
+<summary>3. Setup Guide</summary>
+
+- [How to Setup/Install GitHub](#how-to-setupinstall-github)  
+- [Configuration](#configuration)
+
+</details>
+
+<details>
+<summary>4. Wrap-up</summary>
+
+- [Conclusion](#conclusion)  
+- [Contact](#contact)  
+- [References](#references)
+
+</details>
+
 ---
 
 ## Introduction
 
-This document provides a structured guide for setting up GitHub, a widely used cloud-based version control and collaboration platform. It is designed following a software documentation template to ensure clarity, organization, and ease of understanding for users and teams establishing their GitHub workflows.
+This document provides a structured guide for setting up GitHub, a widely used cloud-based version control and collaboration platform. It is designed following a software documentation template to ensure clarity, organization, and ease of understanding for users and teams establishing their GitHub workflows. 
 
-## Purpose
+## What is Github
 
-The purpose of this documentation is to demonstrate how GitHub can be effectively used to manage source code, collaborate with teams, automate workflows, and maintain project version control in a systematic and efficient manner.
+For detailed understanding of Github [click here.](https://github.com/snaatak-Downtime-Crew/Documentation/blob/SCRUMS-93-PRINCE/vcs_design%20%2B%20poc/features%20of%20vcs/github%20features/README.md)
 
-## Key Features
+## Why GitHub
 
-- **Distributed Version Control**: Track and manage changes across multiple contributors with ease.
-- **Collaboration Tools**: Pull requests, code reviews, and team discussions built into the platform.
-- **Automation and CI/CD**: GitHub Actions enable automated testing, building, and deployment pipelines.
-- **Security and Compliance**: Features like Dependabot alerts, branch protection rules, and secret scanning.
-- **Extensive Integration**: Supports integration with third-party tools like Jenkins, Slack, Jira, and many more.
-- **Hosting and Documentation**: Free hosting for repositories and built-in GitHub Pages for project documentation.
+To understand why GitHub is our choice for VCS during this project [click here.](https://github.com/snaatak-Downtime-Crew/Documentation/blob/SCRUMS-95-Vardaan/vcs_design%20%2B%20poc/features%20of%20vcs/conclusion%20document/README.md)
 
-## Getting Started
 
-### Pre-requisites
+## Pre-requisites
 
 | License Type        | Description                                             | Commercial Use | Open Source |
 |---------------------|---------------------------------------------------------|----------------|-------------|
@@ -168,8 +190,8 @@ Configuration refers to setting up Git locally and linking it securely to GitHub
 
 | Source                                                                                     | Description                                |
 | ------------------------------------------------------------------------------------------ | ------------------------------------------ |
-| GitHub Official Documentation | [visit](https://docs.github.com/en) |
-| Pro Git Book | [visit](https://git-scm.com/book/en/v2) |
-| GitHub CLI Documentation | [visit](https://cli.github.com/manual/) | 
-| Git Installation Guide | [visit](https://git-scm.com/downloads) | 
-| GitHub SSH Key Setup Guide | [visit](https://docs.github.com/en/authentication/connecting-to-github-with-ssh) | 
+| GitHub Official Documentation | [Visit](https://docs.github.com/en) |
+| Pro Git Book | [Visit](https://git-scm.com/book/en/v2) |
+| GitHub CLI Documentation | [Visit](https://cli.github.com/manual/) | 
+| Git Installation Guide | [Visit](https://git-scm.com/downloads) | 
+| GitHub SSH Key Setup Guide | [Visit](https://docs.github.com/en/authentication/connecting-to-github-with-ssh) | 
