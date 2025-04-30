@@ -1,5 +1,8 @@
+
 # Proof of Concept Pull Request on GitHub
-![image](https://github.com/user-attachments/assets/41fd50ae-607d-4273-85fa-d0b9bcd4228b)
+
+![image](https://github.com/user-attachments/assets/26c757c0-8b3d-458c-8d0f-e29003d470ed)
+
 
 ### Author
 | Created     | Version | Author        | Modifed | Comment           | Reviewer   |
@@ -7,32 +10,60 @@
 | 28-04-2025  | V1      | Yuvraj Singh |  | Internal Review   | Siddharth Pawar  |
 
 ## Table of Content
+<details>
+<summary>1. Introduction</summary>
 
 - [Introduction](#introduction)
-- [Pull Request via GitHub GUI (Web Interface)](#pull-request-via-github-gui-web-interface)
-  - [Step 1: Clone a GitHub Repository](#step-1-clone-a-github-repository)
-  - [Step 2: Create a New Branch](#step-2-create-a-new-branch)
-  - [Step 3: Make Changes](#step-3-make-changes)
-  - [Step 4: Push Your Branch](#step-4-push-your-branch)
-  - [Step 5: Open GitHub Website](#step-5-open-github-website)
+- [What is Pull Request](#what-is-pull-request)
+
+</details>
+  
+<details>
+<summary>2. Pull Request via GitHub GUI</summary>
+
+- [Pull Request via GitHub GUI (Web Interface)](#pull-request-via-github-gui-web-interface)  
+  - [Step 1: Clone a GitHub Repository](#step-1-clone-a-github-repository)  
+  - [Step 2: Create a New Branch](#step-2-create-a-new-branch)  
+  - [Step 3: Make Changes](#step-3-make-changes)  
+  - [Step 4: Push Your Branch](#step-4-push-your-branch)  
+  - [Step 5: Open GitHub Website](#step-5-open-github-website)  
   - [Step 6: Fill in PR Details](#step-6-fill-in-pr-details)
-- [Pull Request via GitHub CLI (`gh`)](#pull-request-via-github-cli-gh)
-  - [Step 1: Install and Authenticate GitHub CLI](#step-1-install-and-authenticate-github-cli)
-  - [Step 2: Setup](#step-2-setup)
-  - [Step 3: Create Pull Request Using `gh`](#step-3-create-pull-request-using-gh)
+
+</details>
+
+<details>
+<summary>3. Pull Request via GitHub CLI</summary>
+
+- [Pull Request via GitHub CLI (`gh`)](#pull-request-via-github-cli-gh)  
+  - [Step 1: Install and Authenticate GitHub CLI](#step-1-install-and-authenticate-github-cli)  
+  - [Step 2: Setup](#step-2-setup)  
+  - [Step 3: Create Pull Request Using `gh`](#step-3-create-pull-request-using-gh)  
   - [Step 4: Confirm](#step-4-confirm)
-- [Quick Comparison Table](#quick-comparison-table)
-- [Conclusion](#conclusion)
-- [Contact](#contact)
+
+</details>
+
+<details>
+<summary>4. Comparison & Wrap-up</summary>
+
+- [Quick Comparison Table](#quick-comparison-table)  
+- [Conclusion](#conclusion)  
+- [Contact](#contact)  
 - [References](#references)
+
+</details>
 
 ----
 ## Introduction
 
-This guide focuses on the process of creating Pull Requests using both the GitHub web interface (GUI) and the GitHub Command Line Interface (CLI), providing step-by-step instructions for each method to facilitate efficient collaboration and code integration.
+This guide focuses on the process of creating Pull Requests using both the GitHub web interface (GUI) and the GitHub Command Line Interface (CLI), providing step-by-step instructions for each method to facilitate efficient collaboration and code integration. To get an understanding about Pull Request [click here.](https://github.com/snaatak-Downtime-Crew/Documentation/blob/SCRUMS-106-Adil/vcs_design%20+%20poc/pr/pr%20documentation/README.md)
 
 ---
 
+## What is Pull Request
+
+For detailed documentation about Pull Request [click here](https://github.com/snaatak-Downtime-Crew/Documentation/blob/SCRUMS-106-Adil/vcs_design%20+%20poc/pr/pr%20documentation/README.md) 
+
+---
 ## Pull Request via GitHub GUI (Web Interface)
 
 In this section, we demonstrate how to initiate and manage pull requests using the GitHub web interface. By following the intuitive web-based workflow, you can propose, review, and merge code changes without leaving your browser, making it ideal for users who prefer graphical tools and visual feedback.
@@ -43,11 +74,15 @@ In this section, we demonstrate how to initiate and manage pull requests using t
 git clone https://github.com/your-username/your-repo.git
 cd your-repo
 ```
+![image](https://github.com/user-attachments/assets/fb06d5b6-1590-4c8f-b29f-cf52ab7d94f4)
+
 
 ### Step 2: Create a New Branch
 ```bash
 git checkout -b feature/my-new-feature
 ```
+![image](https://github.com/user-attachments/assets/03ed374f-b79f-419d-bc61-ed4deba150b5)
+
 
 ### Step 3: Make Changes
 Example:
@@ -56,11 +91,13 @@ echo "Hello World!" > hello.txt
 git add hello.txt
 git commit -m "Add hello.txt file"
 ```
+![image](https://github.com/user-attachments/assets/304008a0-a1a0-4ec1-bec3-88efb2da3dcf)
 
 ### Step 4: Push Your Branch
 ```bash
 git push origin feature/my-new-feature
 ```
+![image](https://github.com/user-attachments/assets/bcaa4a03-7672-4f48-bf4d-37c61a37e22c)
 
 ### Step 5: Open GitHub Website
 - Navigate to your repository on GitHub.
@@ -72,12 +109,16 @@ Alternatively:
 - Choose **base branch** (e.g., `main`) and **compare branch** (`feature/my-new-feature`).
 - Click **Create Pull Request**.
 
+![image](https://github.com/user-attachments/assets/d0151fd9-9b9e-4f39-93c2-8072810c17e6)
+
 ### Step 6: Fill in PR Details
 - Title: `Add hello.txt file`
 - Description: `Created a simple hello.txt file.`
 - Click **Create Pull Request**.
 
 Pull Request creation is complete.
+
+![image](https://github.com/user-attachments/assets/22b05e42-9e3c-4f5f-b7a2-6775b70ffa06)
 
 ---
 
@@ -87,11 +128,15 @@ This section covers the creation of pull requests through the GitHub Command Lin
 
 ### Step 1: Install and Authenticate GitHub CLI
 Install:
+
+**Follow Step 1 here**: [Software Install Commands](https://github.com/snaatak-Downtime-Crew/Documentation/tree/main/common_stack/operating_system/ubuntu/sop/softwaremanagement#3-Install-a-Software)
+
 ```bash
 sudo apt install gh          # Ubuntu/Debian
 brew install gh              # MacOS
 choco install gh             # Windows
 ```
+![image](https://github.com/user-attachments/assets/202c4bba-7603-42c5-af51-a2a860bb7bf0)
 
 Login:
 ```bash
@@ -99,12 +144,16 @@ gh auth login
 ```
 Follow the prompts to authenticate.
 
+![image](https://github.com/user-attachments/assets/dab3d738-4c2e-4d66-897c-bdc0c0715886)
+
 ### Step 2: Setup
 - Create a branch
 - Make changes
 - Push the branch to GitHub
 
 (Steps are identical to those mentioned above.)
+
+![image](https://github.com/user-attachments/assets/ed874968-fb08-4dd4-8ca5-841feb1bece4)
 
 ### Step 3: Create Pull Request Using `gh`
 Simple interactive mode:
@@ -117,15 +166,19 @@ gh pr create
   - PR title and body
 
 Or, non-interactive command:
+
 ```bash
-gh pr create --base main --head feature/my-new-feature --title "Add hello.txt file" --body "Created a simple hello.txt file."
+gh pr create --base main --head feature/my-new-feature --title "Add hi.txt file" --body "Created a simple hi.txt file."
 ```
+![image](https://github.com/user-attachments/assets/f8d2387f-e945-45cb-a051-4a6c9478fa58)
 
 ### Step 4: Confirm
 You can view the PR in a browser:
 ```bash
 gh pr view --web
 ```
+
+![image](https://github.com/user-attachments/assets/1d54634b-4378-4a18-96bf-5271ac349223)
 
 Pull Request creation is complete.
 
