@@ -1,5 +1,8 @@
 
-# POC of Employee-API according to Documentation
+# POC of Employee-API
+
+![image](https://github.com/user-attachments/assets/75de11da-e895-4a24-a312-ad9824da4d59)
+
 
 ### Author
 | Created     | Version | Author        | Modifed | Comment           | Reviewer         |
@@ -8,43 +11,89 @@
 
 ## Table of Contents
 
-- [Introduction](#introduction)
+<details>
+<summary>1. Introduction</summary>
+
+- [Introduction](#introduction)  
 - [Supported Features of the Employee API](#supported-features-of-the-employee-api)
-- [Pre-requisites](#pre-requisites)
-- [System Requirements](#system-requirements)
-- [Important Ports](#important-ports)
-- [Dependencies](#dependencies)
-  - [Buildtime Dependency](#buildtime-dependency)
+
+</details>
+
+<details>
+<summary>2. Environment Setup</summary>
+
+- [Pre-requisites](#pre-requisites)  
+- [System Requirements](#system-requirements)  
+- [Important Ports](#important-ports) 
+
+<details>
+<summary>➤ Dependencies</summary>
+
+- [Dependencies](#dependencies)  
+  - [Buildtime Dependency](#buildtime-dependency)  
   - [Runtime Dependency](#runtime-dependency)
-- [Architecture](#architecture)
-- [Step-by-step Installation](#step-by-step-installation)
-  - [Access employee-api Server](#access-employee-api-server)
-  - [Installing Dependencies for employee-api](#installing-dependencies-for-employee-api)
-    - [Go-lang](#go-lang)
-    - [ScyllaDB](#scylladb)
-    - [Redis](#redis)
-    - [Jq](#jq)
-    - [Make](#make)
+
+</details>
+</details>
+
+<details>
+<summary>3. Installation Guide</summary>
+
+- [Step-by-step Installation](#step-by-step-installation)  
+  - [Access employee-api Server](#access-employee-api-server)  
+  - [Installing Dependencies for employee-api](#installing-dependencies-for-employee-api)  
+    - [Go-lang](#go-lang)  
+    - [ScyllaDB](#scylladb)  
+    - [Redis](#redis)  
+    - [Jq](#jq)  
+    - [Make](#make)  
     - [Golang-migrate](#golang-migrate)
-- [Runtime Configuration](#runtime-configuration)
-  - [ScyllaDB Configuration](#scylladb)
-  - [Redis Configuration](#redis)
-- [Create KEYSPACE in Scylla](#create-keyspace-in-scylla)
+
+</details>
+
+<details>
+<summary>4. Configuration</summary>
+
+- [Runtime Configuration](#runtime-configuration)  
+  - [ScyllaDB Configuration](#scylladb)  
+  - [Redis Configuration](#redis)  
+- [Create KEYSPACE in Scylla](#create-keyspace-in-scylla)  
 - [Redis CLI Permissions](#redis-cli-permissions)
-- [Working with employee-api Git Repository](#working-with-employee-api-git-repository)
-  - [Migration Configuration](#migration-configuration)
-  - [Config File Setting](#config-file-setting)
+
+</details>
+
+<details>
+<summary>5. Code Setup</summary>
+
+- [Working with employee-api Git Repository](#working-with-employee-api-git-repository)  
+  - [Migration Configuration](#migration-configuration)  
+  - [Config File Setting](#config-file-setting)  
   - [Configure main.go](#configure-maingo)
-- [Testing Go Modules](#testing-go-modules)
-- [Run the API](#run-the-api)
+
+</details>
+
+<details>
+<summary>6. Testing & Execution</summary>
+
+- [Testing Go Modules](#testing-go-modules)  
+- [Run the API](#run-the-api)  
 - [Check Working](#check-working)
-- [Conclusion](#conclusion)
-- [Contacts](#contacts)
+
+</details>
+
+<details>
+<summary>7. Wrap-up</summary>
+
+- [Conclusion](#conclusion)  
+- [Contact](#contact)  
 - [References](#references)
+
+</details>
+
 
 ## Introduction
 
-Welcome to the Employee-API POC. Employee REST API is a golang based microservice which is responsible for all the employee related transactions in the OT-Microservices. This application is completely platform independent and can be run on any kind of platform.
+Welcome to the Employee-API POC. Employee REST API is a golang based microservice which is responsible for all the employee related transactions in the OT-Microservices. This application is completely platform independent and can be run on any kind of platform. [For Employee API detailed document refer this document](https://github.com/snaatak-Downtime-Crew/Documentation/blob/SCRUMS-79-Adil/ot-ms-understanding/employee/documentation/README.md).
 
 ## Supported Features of the Employee API:
 
@@ -93,8 +142,6 @@ The application doesn't have any specific pre-requisites except the database con
 | ScyllaDB | 6.2 |
 | Redis | 6.0.16 |
 
-##  Architecture 
-![image](https://github.com/user-attachments/assets/a10136d5-2733-4460-9615-4ac2af64dbee)
 
 ## Step-by-step installation
 This guide explains how to set up a virtual machine (VM), install dependencies, configure the database and caching services, and run the `employee-api` application. Follow each step carefully to ensure the application is correctly installed and functioning.
@@ -537,10 +584,9 @@ http://public-ip:8080/swagger/index.html
 
 ## Conclusion
 
-This Proof of Concept (POC) for the Employee API provides a detailed and structured approach to deploying a scalable and high-performing microservice. The document offers clear guidelines on system requirements, dependencies, and installation steps to ensure a seamless setup process. By leveraging modern technologies like Golang, ScyllaDB, and Redis, the API achieves optimal performance, scalability, and reliability. The integration of Swagger enhances usability by providing interactive API documentation for easy testing and endpoint management. Comprehensive instructions on database migration, caching configurations, and testing procedures ensure robustness and maintainability. With its production-ready deployment strategy and emphasis on quality, this POC demonstrates a practical and efficient approach to implementing microservices while offering ample support for troubleshooting and future enhancements.
+This Proof of Concept (POC) for the Employee API provides a detailed and structured approach to deploying a scalable and high-performing microservice. The document offers clear guidelines on system requirements, dependencies, and installation steps to ensure a seamless setup process. By leveraging modern technologies like Golang, ScyllaDB, and Redis, the API achieves optimal performance, scalability, and reliability.
 
-
-## Contacts
+## Contact
 
 | Name| Email Address      |
 |-----|--------------------------|
