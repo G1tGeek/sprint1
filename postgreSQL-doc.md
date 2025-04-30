@@ -1,5 +1,4 @@
 
-
 # PostgresSQL Documentation
 
 ![Logo](https://miro.medium.com/v2/resize:fit:610/1*lZrXmWJRDLqIImJThs5Lrw.png)
@@ -7,28 +6,52 @@
 ### Author
 | Created     | Version | Author        | Modifed | Comment           | Reviewer         |
 |-------------|---------|---------------|-------|------------|------------------|
-| 26-04-2025  | V1      | Yuvraj Singh |  | Internal Review   | Siddharth Pawar  |
+| 26-04-2025  | V1.1     | Yuvraj Singh | 29-04-2025 | Internal Review   | Siddharth Pawar  |
 
 
 ## Table of Contents
-1. [Introduction](#introduction)
-2. [What is PostgreSQL](#what-is-postgresql)
-3. [Features](#features-of-postgresql)
-4. [Key Concepts](#key-concepts)
-5. [Why Use PostgreSQL?](#why-use-postgresql)
-6. [Architecture Overview](#architecture-overview)
-7. [Creating and Managing a PostgreSQL Database](#creating-and-managing-a-postgresql-database)
-8. [Common SQL Commands](#common-sql-commands)
-9. [Advanced Features](#advanced-features)
-10. [Best Practices](#best-practices)
-11. [Conclusion](#conclusion)
-12. [Contact Information](#contact-information)
-13. [References](#references)
+
+<details>
+<summary>1. Introduction</summary>
+
+- [Introduction](#introduction)  
+- [What is PostgreSQL](#what-is-postgresql)  
+- [Why Use PostgreSQL?](#why-use-postgresql)
+
+</details>
+
+<details>
+<summary>2. Core Concepts</summary>
+
+- [Features](#features-of-postgresql)  
+- [Key Concepts](#key-concepts)  
+- [Architecture Overview](#architecture-overview)
+
+</details>
+
+<details>
+<summary>3. Getting Started</summary>
+
+- [Setup](#setup)  
+- [Creating and Managing a PostgreSQL Database](#creating-and-managing-a-postgresql-database)  
+- [Common SQL Commands](#common-sql-commands)  
+- [Best Practices](#best-practices)
+
+</details>
+
+<details>
+<summary>4. Wrap-up</summary>
+
+- [Conclusion](#conclusion)  
+- [Contact](#contact)  
+- [References](#references)
+
+</details>
 
 ---
 
 ### Introduction
-This guide provides a comprehensive overview of PostgreSQL—a powerful, open-source relational database management system. It covers PostgreSQL’s key features, core concepts, common SQL operations, advanced functionalities, and best practices. By understanding and using PostgreSQL effectively, developers and database administrators can build scalable, reliable, and high-performance database solutions for a wide range of applications.
+This guide provides a comprehensive overview of PostgreSQL—a powerful, open-source relational database management system. It covers PostgreSQL’s key features, core concepts, common SQL operations, advanced functionalities, and best practices. By understanding and using PostgreSQL effectively, developers and database administrators can build scalable, reliable, and high-performance database solutions for a wide range of applications. 
 
 ---
 
@@ -37,17 +60,30 @@ PostgreSQL is a powerful, open-source object-relational database management syst
 
 ---
 
+### Why Use PostgreSQL?
+| Benefits          | Description                                               |
+|-------------------|------------------------------------------------------------|
+| **Reliable**      | Trusted for mission-critical applications.                |
+| **Scalable**      | Suitable for small apps to large data-intensive systems.  |
+| **Open-source**   | No licensing fees, large ecosystem, active contributions. |
+| **Versatile**     | Supports OLTP, OLAP, geospatial data, full-text search, and more. |
+| **Feature-rich**  | Advanced indexing, partitioning, JSON support, and more.   |
+
+---
+
 ### Features of PostgreSQL
-| Feature                | Description                                                                                    |
-|-------------------------|------------------------------------------------------------------------------------------------|
-| **Open Source**         | Free and open-source, with a large community and active development.                           |
-| **Advanced Data Types** | Supports a wide range of data types, including JSON, XML, arrays, ranges, and user-defined types. |
-| **High Availability**   | Supports replication, failover, and clustering for redundancy and fault tolerance.             |
-| **Powerful Querying**   | Provides a rich SQL language and optimization tools for querying and manipulating data.         |
-| **Scalability**         | Capable of handling terabytes of data and thousands of concurrent users.                       |
-| **Robust Security**     | Offers user authentication, SSL, encryption, and fine-grained access control.                  |
-| **Extensibility**       | Allows users to define custom data types, operators, and functional languages.                 |
-| **ACID Compliance**     | Ensures data integrity through full support of ACID (Atomicity, Consistency, Isolation, Durability) properties. |
+
+| Feature                  | Description                                                                                 |
+|--------------------------|---------------------------------------------------------------------------------------------|
+| **Open Source**          | Free to use with strong community support and continuous development.                      |
+| **Advanced Data Types**  | Supports JSON, XML, arrays, ranges, geometric types, and user-defined types.               |
+| **High Availability**    | Offers replication, failover, and clustering for fault tolerance and scalability.          |
+| **Extensibility**        | Allows creation of custom data types, functions, and procedural languages like PL/pgSQL.   |
+| **Foreign Data Access**  | Connects to external databases (e.g., MySQL, Oracle, CSV) using Foreign Data Wrappers.     |
+| **Full-Text Search**     | Enables efficient search capabilities across large text fields.                            |
+| **Security**             | Includes user roles, SSL, encryption, and fine-grained access controls.                    |
+| **Materialized Views**   | Caches complex query results for faster access and better performance.                     |
+
 
 ---
 
@@ -66,17 +102,6 @@ PostgreSQL is a powerful, open-source object-relational database management syst
 
 ---
 
-### Why Use PostgreSQL?
-| Benefits          | Description                                               |
-|-------------------|------------------------------------------------------------|
-| **Reliable**      | Trusted for mission-critical applications.                |
-| **Scalable**      | Suitable for small apps to large data-intensive systems.  |
-| **Open-source**   | No licensing fees, large ecosystem, active contributions. |
-| **Versatile**     | Supports OLTP, OLAP, geospatial data, full-text search, and more. |
-| **Feature-rich**  | Advanced indexing, partitioning, JSON support, and more.   |
-
----
-
 ### Architecture Overview
 
 ![image](https://github.com/user-attachments/assets/82403362-fb44-4c94-90bf-61266e9cb356)
@@ -89,10 +114,15 @@ PostgreSQL is a powerful, open-source object-relational database management syst
 
 ---
 
+### Setup
+
+Use the [PostgreSQL POC](https://github.com/snaatak-Downtime-Crew/Documentation/tree/SCRUMS-86-Vardaan/ot-ms-understanding/postgressql/poc#step-by-step-setup-guide) for a step-by-step setup guide.
+
+---
+
 ### Creating and Managing a PostgreSQL Database
 | Rule                 | Description                                                                                 |
 |----------------------|---------------------------------------------------------------------------------------------|
-| **Installation**     | Use the [PostgreSQL POC](https://github.com/snaatak-Downtime-Crew/Documentation/tree/SCRUMS-86-Vardaan/ot-ms-understanding/postgressql/poc#step-by-step-setup-guide) for a step-by-step setup guide. |
 | **Database Creation**| Use the `CREATE DATABASE` command to create a new database instance.                        |
 | **Schema Definition**| Design your schema using `CREATE TABLE`, `FOREIGN KEY`, `PRIMARY KEY`, and data types.       |
 | **Data Manipulation**| Use `INSERT`, `UPDATE`, `DELETE`, and `SELECT` commands to manage data.                      |
@@ -115,29 +145,17 @@ PostgreSQL is a powerful, open-source object-relational database management syst
 
 ---
 
-### Advanced Features
-| Features                | Description                                                 |
-|--------------------------|-------------------------------------------------------------|
-| **Advanced Data Types**  | JSON, XML, Hstore, Arrays, Geometric types, Ranges, etc.     |
-| **Procedural Languages** | PL/pgSQL, PL/Python, PL/Perl, PL/Tcl for writing functions.  |
-| **Logical Replication**  | Replicate changes to another database in near real-time.     |
-| **Physical Replication** | Stream WAL changes for synchronous replication.             |
-| **Partitioning**         | Divide large tables for better performance and management.  |
-| **Foreign Data Wrappers**| Access external data sources like MySQL, Oracle, CSV, etc.   |
-| **Full-Text Search**     | Advanced search within large text fields.                    |
-| **Materialized Views**   | Save query results for fast access.                          |
-| **Triggers**             | Automate actions on specific database events.                |
-
----
-
 ### Best Practices
-- Always use connection pooling (e.g., PgBouncer) for high concurrency.
-- Regularly analyze and vacuum tables to optimize performance.
-- Backup databases regularly using `pg_dump` and test restores.
-- Use indexes wisely but avoid over-indexing which can slow down inserts.
-- Apply appropriate constraints to maintain data integrity.
-- Secure database by managing roles and applying SSL.
-- Monitor performance using tools like `pg_stat_activity` and `pg_stat_statements`.
+
+| **Practice**                            | **Description**                                                                 |
+|----------------------------------------|---------------------------------------------------------------------------------|
+| **Use Connection Pooling**             | Tools like **PgBouncer** help manage high-concurrency workloads efficiently.    |
+| **Analyze & Vacuum Tables**            | Regular maintenance improves query planning and reclaims storage.              |
+| **Regular Backups**                    | Use `pg_dump` and test restore processes to ensure data safety.                |
+| **Use Indexes Wisely**                 | Indexes speed up queries but can slow inserts/updates if overused.             |
+| **Apply Constraints**                  | Enforce data integrity using primary keys, foreign keys, and checks.           |
+| **Secure the Database**                | Use roles, permissions, and **SSL encryption** to protect access and data.     |
+| **Monitor Performance**                | Use tools like `pg_stat_activity` and `pg_stat_statements` to track bottlenecks.|
 
 ---
 
@@ -146,7 +164,7 @@ PostgreSQL is a powerful and versatile database management system that offers a 
 
 ---
 
-### Contact Information
+### Contact
 
 | Name          | Email Address                              |
 |---------------|--------------------------------------------|
