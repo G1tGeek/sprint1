@@ -1,3 +1,5 @@
+
+
 # GitOps Tools Evaluation
 
 ![image](https://github.com/user-attachments/assets/ae393b89-9659-4d8e-aa09-6fda19909b68)
@@ -9,29 +11,16 @@
 | 25-04-2025  | V1      | Yuvraj Singh |  | Internal Review   | Siddharth Pawar  |
 ## **Table of Contents**
 1. [Introduction](#introduction)
-2. [What is GitOps](#what-is-gitops)
-3. [Why GitOps?](#why-gitops)
-4. [Popular GitOps Tools](#popular-gitops-tools)
-5. [Comparison of GitOps Tools](#comparison-of-gitops-tools)
-6. [Conclusion](#conclusion)
-7. [Contact](#contact)
-8. [References](#references)
+2. [Popular GitOps Tools](#popular-gitops-tools)
+3. [Comparison of GitOps Tools](#comparison-of-gitops-tools)
+4. [Conclusion](#conclusion)
+5. [Contact](#contact)
+6. [References](#references)
 
 
 ## Introduction
 
 This documentation outlines the core concepts and practical value of the jq command-line tool, highlighting why it was created, what it offers, and how its features align with modern data processing and automation requirements in software development.
-
-## What is GitOps?
-
-GitOps is a modern operational framework that applies Git-based workflows to infrastructure and application deployment. It relies on Git as the single source of truth for declarative infrastructure and applications, allowing changes to be managed through pull requests and automatically applied via continuous delivery tools.
-
-## Why GitOps?
-
-> - **Declarative infrastructure**: Ensures all system configurations are version-controlled and reproducible.
-> - **Auditability**: Tracks all changes through Git history.
-> - **Automation**: Streamlines deployment processes with CI/CD integration.
-> - **Reliability**: Reduces configuration drift and enhances system stability.
 
 ## Popular GitOps Tools
 
