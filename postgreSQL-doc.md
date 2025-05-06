@@ -6,7 +6,7 @@
 ### Author
 | Created     | Version | Author        | Modifed | Comment           | Reviewer         |
 |-------------|---------|---------------|-------|------------|------------------|
-| 26-04-2025  | V1.1     | Yuvraj Singh | 29-04-2025 | Internal Review   | Siddharth Pawar  |
+| 26-04-2025  | V1.2     | Yuvraj Singh | 01-05-2025 | Internal Review   | Siddharth Pawar  |
 
 
 ## Table of Contents
@@ -50,17 +50,17 @@
 
 ---
 
-### Introduction
+## Introduction
 This guide provides a comprehensive overview of PostgreSQL—a powerful, open-source relational database management system. It covers PostgreSQL’s key features, core concepts, common SQL operations, advanced functionalities, and best practices. By understanding and using PostgreSQL effectively, developers and database administrators can build scalable, reliable, and high-performance database solutions for a wide range of applications. 
 
 ---
 
-### What is PostgreSQL?
+## What is PostgreSQL?
 PostgreSQL is a powerful, open-source object-relational database management system (ORDBMS) known for its reliability, scalability, and advanced features. It is widely used for various applications, from small personal projects to large-scale enterprise deployments.
 
 ---
 
-### Why Use PostgreSQL?
+## Why Use PostgreSQL?
 | Benefits          | Description                                               |
 |-------------------|------------------------------------------------------------|
 | **Reliable**      | Trusted for mission-critical applications.                |
@@ -71,7 +71,7 @@ PostgreSQL is a powerful, open-source object-relational database management syst
 
 ---
 
-### Features of PostgreSQL
+## Features of PostgreSQL
 
 | Feature                  | Description                                                                                 |
 |--------------------------|---------------------------------------------------------------------------------------------|
@@ -87,7 +87,7 @@ PostgreSQL is a powerful, open-source object-relational database management syst
 
 ---
 
-### Key Concepts
+## Key Concepts
 | Term               | Description                                                                                  |
 |--------------------|----------------------------------------------------------------------------------------------|
 | **Database**       | A collection of related data objects like tables, views, and functions.                      |
@@ -102,25 +102,49 @@ PostgreSQL is a powerful, open-source object-relational database management syst
 
 ---
 
-### Architecture Overview
+## Architecture Overview
 
 ![image](https://github.com/user-attachments/assets/82403362-fb44-4c94-90bf-61266e9cb356)
 
-- **Process-based model:** Each connection gets a separate process for isolation and performance.
-- **Shared Buffers:** Caches data pages to speed up operations.
-- **Write-Ahead Logging (WAL):** Ensures data durability even during crashes.
-- **Background Workers:** Handles maintenance tasks like autovacuum and replication.
-- **Extensible Plugins:** Add new functionalities without altering core PostgreSQL.
+### Client Request Handling
+
+**Client Applications → Postmaster**
+- Client applications initiate a connection to the ScyllaDB server.
+- The **Postmaster** (inspired by PostgreSQL terminology) acts as a listener or connection handler that accepts incoming connections.
+
+**Postmaster → Backend Process**
+- Once a connection is accepted, the Postmaster delegates it to a **Backend Process**.
+- This process handles actual request execution (e.g., CQL queries in ScyllaDB).
+
+**Backend Process → Shared Memory**
+- The backend process interacts with **Shared Memory** to access cached data or communicate with other processes.
+- Shared memory enables fast data access and inter-process communication within ScyllaDB.
 
 ---
 
-### Setup
+### Server and Storage Management
 
-Use the [PostgreSQL POC](https://github.com/snaatak-Downtime-Crew/Documentation/tree/SCRUMS-86-Vardaan/ot-ms-understanding/postgressql/poc#step-by-step-setup-guide) for a step-by-step setup guide.
+**Client Applications → Main Server Process**
+- This path shows client interactions that may trigger lower-level operations (e.g., triggering flushes, compactions).
+
+**Main Server Process → Background Processes**
+- The **Main Server Process** oversees overall operations and delegates longer-running or maintenance tasks to **Background Processes**.
+
+**Background Processes → Storage Manager**
+- Background processes (e.g., compaction, flushing, repair) work with the **Storage Manager**.
+- The **Storage Manager** handles actual data writing to disk (SSTables), compactions, and other I/O tasks.
 
 ---
 
-### Creating and Managing a PostgreSQL Database
+
+
+## Setup
+
+Use the [PostgreSQL POC](https://github.com/snaatak-Downtime-Crew/Documentation/blob/SCRUMS-86-Vardaan/ot-ms-understanding/software/database/postgressql/poc/README.md) for a step-by-step setup guide.
+
+---
+
+## Creating and Managing a PostgreSQL Database
 | Rule                 | Description                                                                                 |
 |----------------------|---------------------------------------------------------------------------------------------|
 | **Database Creation**| Use the `CREATE DATABASE` command to create a new database instance.                        |
@@ -131,7 +155,7 @@ Use the [PostgreSQL POC](https://github.com/snaatak-Downtime-Crew/Documentation/
 
 ---
 
-### Common SQL Commands
+## Common SQL Commands
 | Command | Description |
 |---------|-------------|
 | `CREATE DATABASE dbname;` | Create a new database. |
@@ -145,7 +169,7 @@ Use the [PostgreSQL POC](https://github.com/snaatak-Downtime-Crew/Documentation/
 
 ---
 
-### Best Practices
+## Best Practices
 
 | **Practice**                            | **Description**                                                                 |
 |----------------------------------------|---------------------------------------------------------------------------------|
@@ -159,12 +183,12 @@ Use the [PostgreSQL POC](https://github.com/snaatak-Downtime-Crew/Documentation/
 
 ---
 
-### Conclusion
+## Conclusion
 PostgreSQL is a powerful and versatile database management system that offers a wide range of features and benefits. Its reliability, scalability, and advanced capabilities make it a popular choice for various applications. By understanding the key concepts, common SQL commands, and advanced features, we can effectively use PostgreSQL to manage and analyze our data.
 
 ---
 
-### Contact
+## Contact
 
 | Name          | Email Address                              |
 |---------------|--------------------------------------------|
@@ -172,7 +196,7 @@ PostgreSQL is a powerful and versatile database management system that offers a 
 
 ---
 
-### References
+## References
 
 | Resource                         | Link                                                |
 |----------------------------------|-----------------------------------------------------|
