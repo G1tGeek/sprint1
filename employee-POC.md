@@ -1,4 +1,5 @@
 
+
 # POC of Employee-API
 
 ![image](https://github.com/user-attachments/assets/75de11da-e895-4a24-a312-ad9824da4d59)
@@ -7,7 +8,11 @@
 ### Author
 | Created     | Version | Author        | Modifed | Comment           | Reviewer         |
 |-------------|---------|---------------|-------|------------|------------------|
-| 25-04-2025  | V1      | Yuvraj Singh |  | Internal Review   | Siddharth Pawar  |
+| 25-04-2025  |  V1.1      | Yuvraj Singh | 01-05-2025 | Internal Review   | Siddharth Pawar  |
+| 02-05-2025  |  V2        | Yuvraj Singh |            | L0 Review         | Naveen Haswani |
+|             |  V3        | Yuvraj Singh |            | L1 Review         | Deepak Nishad |
+|             |  V4        | Yuvraj Singh |            | L2 Review         | Ashwani Singh |
+
 
 ## Table of Contents
 
@@ -15,8 +20,6 @@
 <summary>1. Introduction</summary>
 
 - [Introduction](#introduction)  
-- [Supported Features of the Employee API](#supported-features-of-the-employee-api)
-
 </details>
 
 <details>
@@ -93,17 +96,8 @@
 
 ## Introduction
 
-Welcome to the Employee-API POC. Employee REST API is a golang based microservice which is responsible for all the employee related transactions in the OT-Microservices. This application is completely platform independent and can be run on any kind of platform. [For Employee API detailed document refer this document](https://github.com/snaatak-Downtime-Crew/Documentation/blob/SCRUMS-79-Adil/ot-ms-understanding/employee/documentation/README.md).
+Welcome to the Employee-API POC. Employee REST API is a golang based microservice which is responsible for all the employee related transactions in the OT-Microservices. This application is completely platform independent and can be run on any kind of platform. [For Employee API detailed document refer this document](https://github.com/snaatak-Downtime-Crew/Documentation/blob/SCRUMS-79-Adil/ot-ms-understanding/applications/employee/documentation/README.md).
 
-## Supported Features of the Employee API:
-
-| Component              | Description                                                                                                 |
-|------------------------|-------------------------------------------------------------------------------------------------------------|
-| **Go**                 | A fast, lightweight web framework providing routing, middleware handling, and API request management.       |
-| **ScyllaDB**           | Primary database for storing all employee data; a high-performance NoSQL solution compatible with Cassandra, ensuring scalability and fast data access. |
-| **Redis (Optional)**   | Cache layer for storing frequently accessed employee data, reducing database load and improving response times. |
-| **Swagger/OpenAPI**    | Integrated API documentation, allowing for easier interaction with and understanding of endpoints, data structures, and testing. |
-| **Database Migrations**| Managed with the Migrate, enabling database schema changes and maintaining consistency across environments. |
 
 ## Pre-requisites 
 The application doesn't have any specific pre-requisites except the database connectivity. Additionally, we can add Redis as cache system but it's not part of the mandatory setup and Migrate to setup table in ScyllaDB.
@@ -133,7 +127,7 @@ The application doesn't have any specific pre-requisites except the database con
 ### Buildtime Dependency
 | Buildtime  Dependency  | version |
 |:-----------------------:|:--------------------:|
-| Golang | 1.18 |
+| Golang | >=1.21 |
 | Migrate | 4.15.2 |
 
 ### Runtime Dependency
@@ -176,7 +170,7 @@ ssh -i path-to-your .pem key ubuntu@employee-api-public-ip
 
 ---
 
-- *Install ScyllaDB* [Go to this link for ScyllaDB installation guide](https://github.com/snaatak-Downtime-Crew/Documentation/blob/SCRUMS-88-Adil/ot-ms-understanding/scylladb/poc/README.md#step-by-step-installation-of-scylladb)
+- *Install ScyllaDB* [Go to this link for ScyllaDB installation guide](https://github.com/snaatak-Downtime-Crew/Documentation/blob/SCRUMS-88-Adil/common_stack/software/scylladb/installation/README.md)
 
 ---
 
@@ -184,7 +178,7 @@ ssh -i path-to-your .pem key ubuntu@employee-api-public-ip
 
 ---
 
-- *Install redis-server* [Go to this link for Redis-server installation guide](https://github.com/snaatak-Downtime-Crew/Documentation/blob/SCRUMS-84-PRINCE/ot-ms-understanding/redis/poc/README.md#1-install-redis-server)
+- *Install redis-server* [Go to this link for Redis-server installation guide](https://github.com/snaatak-Downtime-Crew/Documentation/blob/SCRUMS-84-PRINCE/common_stack/software/redis/installation/README.md#1-install-redis-server)
 
 ---
 
@@ -216,124 +210,18 @@ ssh -i path-to-your .pem key ubuntu@employee-api-public-ip
 ---
 
 ### Scylla DB
----
 
-1. *Open scylla configuration file*
-
-```
-sudo vi /etc/scylla/scylla.yaml  
-```
-![image](https://github.com/user-attachments/assets/fc34f7d1-4755-4991-9a19-adc841949741)
-
-- *Changes to make:*  
-
-```
-rpc_address: localhost > rpc_address: instance_private_ip
-```
-![image](https://github.com/user-attachments/assets/08149281-4a55-4e7a-99ea-0523d1ae348d)
-
-- *Also add the following at the bottom of the file to allow scylla db to be accessable with cassandra credentials.* 
-
-```
-authenticator: PasswordAuthenticator  
-authorizer: CassandraAuthorizer
-```
-![image](https://github.com/user-attachments/assets/6ae7eec4-3f85-4da6-9576-2f472b8ed7b4)
-
-
-- *Write and quit the file*
+For scyllaDB configuration [click here](https://github.com/snaatak-Downtime-Crew/Documentation/blob/SCRUMS-88-Adil/common_stack/software/scylladb/configuration/README.md)
 
 ---
 
-2. *Scylla dependencies installation and service file creation*
-
-```
-sudo /opt/scylladb/scripts/scylla_io_setup
-```
-![image](https://github.com/user-attachments/assets/6e182ee7-22d1-4b95-956b-684b2794d4c7)
-
----
-
-3. *Enable scylla service file to be started after system reboot*
-
-```
-sudo systemctl enable scylla-server  
-```
-![image](https://github.com/user-attachments/assets/c8e6c338-4b70-45fa-aec7-7fe91809a4cc)
-
----
-
-4. *Start the scylla server*
-
-```
-sudo systemctl start scylla-server
-```
-![image](https://github.com/user-attachments/assets/abcb98e4-8d75-43d7-9733-29069b1ee5c5)
-
----
-
-5. *Confirm if the scylla-server is running or not*
-
-```
-sudo systemctl status scylla-server
-```
-![image](https://github.com/user-attachments/assets/44f43e70-5061-4638-89f9-11ed3d918b98)
-
----
 
 ### Redis
 
----
-
-1. *Open redis configuration file*
-
-```
-sudo vi /etc/redis/redis.conf
-```
-![image](https://github.com/user-attachments/assets/b3ef38b1-7959-4ab9-a19e-f9e7280de3fc)
-
-
-- *Changes to make:* 
-
-```
-# bind 127.0.0.1 ::1 > bind 127.0.0.1 instance_private_ip
-```
-
-![image](https://github.com/user-attachments/assets/f3466d4a-f135-42f4-b343-36bb298a08da)
-
-> *Write and quit the file*
+For redis configuration [click here](https://github.com/snaatak-Downtime-Crew/Documentation/blob/SCRUMS-84-PRINCE/common_stack/software/redis/configuration/README.md)
 
 ---
 
-2. *Enable redis service file to be started after system reboot*
-
-```
-sudo systemctl enable redis-server  
-```
-
-![image](https://github.com/user-attachments/assets/ea4ad2a5-0f48-4123-847d-94f7a38377f1)
-
----
-
-3. *Start the redis server*
-
-```
-sudo systemctl start redis-server
-```
-
-![image](https://github.com/user-attachments/assets/5de31e57-645e-4879-8f4f-d28fae911798)
-
----
-
-4. *Confirm if the redis-server is running or not*
-
-```
-sudo systemctl status redis-server
-```
-
-![image](https://github.com/user-attachments/assets/8b56b15a-ef20-4e3e-856e-9140ca42448f)
-
----
 
 ## Create KEYSPACE in Scylla
 ---
@@ -433,7 +321,7 @@ exit
 
 ---
 
-1. *Clone the employee-api repository into our local system*
+1. *Clone the **employee-api** repository into our local system*
 
 ```
 git clone https://github.com/OT-MICROSERVICES/employee-api.git  
@@ -442,36 +330,19 @@ git clone https://github.com/OT-MICROSERVICES/employee-api.git
 
 ---
 
-2. *Move to employee api directory and lists the contents*
-
-```
-cd employee-api && ls
-```
-![image](https://github.com/user-attachments/assets/5b527dae-b813-480d-81af-2fe7ca872efb)
-
----
+2. *Move to **employee api** directory and lists the contents*
 
 ### Migration configuration
 
 ---
 
-1. *Open the migrations file*
-
-```
-vi migration.json
-```
-
-![image](https://github.com/user-attachments/assets/e5b70030-4f55-4790-9de8-4f5e61514321)
-
----
-
-2. *Replace the IP address with your actual private IP*
+1. *Open the **migration.json** file and replace the IP address with your actual private IP*
 
 ![image](https://github.com/user-attachments/assets/5ce9b348-3d77-4df6-8341-ab3ecc7fd115)
 
 ---
 
-3. *Execute the migration.json file to configure database connection.*
+2. *Execute the **migration.json** file to configure database connection.*
 
 ```
 make run-migrations
@@ -485,17 +356,7 @@ make run-migrations
 
 ---
 
-1. *Open config.yaml file* 
-
-```
-vi config.yaml
-```
-
-![image](https://github.com/user-attachments/assets/f39a4329-046e-4e39-8ec7-9018049b12dd)
-
----
-
-2. *Replace the IP address with your actual private IP for both scylladb and redis*
+> *Open **config.yaml** file and replace the IP address with your actual private IP for both scylladb and redis*
 
 ![image](https://github.com/user-attachments/assets/97809e66-94cf-4369-a157-f6f02883e2cc)
 
@@ -506,17 +367,7 @@ vi config.yaml
 
 ---
 
-1. *Open main.go*
-
-```
-vi main.go
-```
-
-![image](https://github.com/user-attachments/assets/29c77b81-c5a7-4f61-980b-0ef31d125723)
-
----
-
-2. *Replace `localhost` with `<public-ip:8080>`*
+> *Open **main.go** replace `localhost` with `<public-ip:8080>`*
 
 ![image](https://github.com/user-attachments/assets/1ed2b161-7e20-4fbd-88c4-9e6f62b383f8)
 
@@ -551,11 +402,36 @@ go tool cover -html=cover.out
 
 - *Run the api*
 
-```
-go run main.go
-```
+### Create service file for main.go
 
-![image](https://github.com/user-attachments/assets/dbc938af-c9c8-468e-9f4b-576cd953abe3)
+> *Opne the file /etc/systemd/system/employee-api.service and paste the below code in it*
+
+```
+[Unit]
+Description=Employee API Go Service (go run main.go)
+After=network.target
+
+[Service]
+User=ubuntu
+WorkingDirectory=/home/ubuntu/employee-api
+ExecStart=/usr/local/go/bin/go run main.go
+Restart=on-failure
+Environment=GIN_MODE=release
+
+[Install]
+WantedBy=multi-user.target
+
+```
+![image](https://github.com/user-attachments/assets/2a999418-86d7-4d53-8d03-29077a9235c2)
+
+> *Then run the below [systemctl](https://github.com/snaatak-Downtime-Crew/Documentation/blob/main/common_stack/operating_system/ubuntu/sop/services/README.md#systemctl-commands-explained) commands to start the employee-api service*
+
+```
+sudo systemctl daemon-reexec
+sudo systemctl daemon-reload
+sudo systemctl start employee-api.service
+sudo systemctl enable employee-api.service
+```
 
 ---
 
