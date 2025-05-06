@@ -8,43 +8,51 @@
 ## **Author**
 | Created     | Version | Author        | Modifed | Comment           | Reviewer         |
 |-------------|---------|---------------|-------|------------|------------------|
-| 25-04-2025  | V1      | Yuvraj Singh |  | Internal Review   | Siddharth Pawar  |
+| 25-04-2025  |  V1.1      | Yuvraj Singh | 01-05-2025 | Internal Review   | Siddharth Pawar  |
+| 02-05-2025  |  V2        | Yuvraj Singh |            | L0 Review         | Naveen Haswani |
+|             |  V3        | Yuvraj Singh |            | L1 Review         | Deepak Nishad |
+|             |  V4        | Yuvraj Singh |            | L2 Review         | Ashwani Singh |
+
+
 ## **Table of Contents**
 1. [Introduction](#introduction)
-2. [Popular GitOps Tools](#popular-gitops-tools)
-3. [Comparison of GitOps Tools](#comparison-of-gitops-tools)
-4. [Conclusion](#conclusion)
-5. [Contact](#contact)
-6. [References](#references)
+2. [Gitops Documentation](#gitops-documentation)
+3. [Popular GitOps Tools](#popular-gitops-tools)
+4. [Comparison of GitOps Tools](#comparison-of-gitops-tools)
+5. [Conclusion](#conclusion)
+6. [Contact](#contact)
+7. [References](#references)
 
 
 ## Introduction
 
 This documentation outlines the core concepts and practical value of the jq command-line tool, highlighting why it was created, what it offers, and how its features align with modern data processing and automation requirements in software development.
 
+## Gitops Documentation
+
+To get an understanding of what is gitops and why we're using GitOps as a method of automation in our project [click here.](https://github.com/snaatak-Downtime-Crew/Documentation/blob/SCRUMS-113-Vardaan/vcs_design%20%2B%20poc/gitops/understanding/README.md)
+
 ## Popular GitOps Tools
 
-There are several popular tools used in GitOps practices. Below are some of the key ones:
-
-> - **Argo CD**: A declarative, GitOps continuous delivery tool for Kubernetes.
-> - **Flux**: A GitOps operator that synchronizes configuration from Git to Kubernetes.
-> - **Jenkins X**: Built on Jenkins, designed specifically for Kubernetes CI/CD with GitOps.
-> - **Spinnaker**: A multi-cloud continuous delivery platform with support for GitOps workflows.
-> - **Rancher Fleet**: Focuses on managing large-scale Kubernetes clusters with GitOps.
-> - **Weave GitOps**: Built on Flux with enterprise-grade features.
+| Tool            | What It Is                                                                 | Why It Matters                                                                 |
+|-----------------|-----------------------------------------------------------------------------|----------------------------------------------------------------------------------|
+| **Argo CD**     | A declarative GitOps tool for Kubernetes with a built-in UI and RBAC.     | Offers UI support, ease of use, and high integration for K8s deployments.       |
+| **Flux**        | A CLI-first GitOps operator for Kubernetes.                                | Simple, lightweight, and well-suited for automation-heavy workflows.            |
+| **Jenkins X**   | Kubernetes-native CI/CD solution built on Jenkins with GitOps support.     | Ideal for integrating GitOps into CI/CD pipelines on Kubernetes.                |
+| **Spinnaker**   | A multi-cloud CD tool that supports GitOps workflows via integrations.     | Suitable for complex deployments across multiple clouds.                        |
+| **Fleet**       | GitOps tool designed for managing thousands of Kubernetes clusters.        | Scales very well for multi-cluster, enterprise environments.                    |
+| **Weave GitOps**| Enterprise-focused GitOps tool built on Flux with enhanced capabilities.   | Offers policy management and enterprise features out-of-the-box.                |
 
 ## Comparison of GitOps Tools
 
-# GitOps Tool Comparison Table
-
-| Tool            | Kubernetes Native | UI Support | Multi-cluster | Helm Support | Custom Resource Sync | Sync Policy       | Integration              | Scalability     | Ease of Use                   | Installation         | Pricing                    | Best For                        |
-|-----------------|-------------------|------------|----------------|---------------|-----------------------|-------------------|---------------------------|------------------|--------------------------------|------------------------|-----------------------------|----------------------------------|
-| **Argo CD**     | Yes               | Yes        | Yes            | Yes           | Yes                   | Manual or auto    | Kubernetes-native         | High             | User-friendly GUI             | Moderate complexity   | Open-source & paid options | Enterprises needing GUI         |
-| **Flux**        | Yes               | Limited    | Yes            | Yes           | Yes                   | Fully automatic   | Kubernetes-native         | High             | Lightweight CLI               | Simple setup          | Fully open-source           | Lightweight users               |
-| **Jenkins X**   | Yes               | Limited    | Yes            | Yes           | Yes                   | Configurable      | For Kubernetes            | Moderate         | Moderate complexity           | Complex               | Fully open-source           | CI/CD for Kubernetes            |
-| **Fleet**       | Yes               | Yes        | Yes            | Yes           | Yes                   | Fully automatic   | Focused on clusters       | Very High        | GUI & CLI options             | Moderate setup         | Fully open-source           | Multi-cluster setups            |
-| **Spinnaker**   | Partial           | Yes        | Yes            | Limited       | Yes                   | Configurable      | Multi-cloud flexibility   | High             | GUI-based, steep learning curve | High complexity       | Free & enterprise           | Large organizations             |
-| **Weave GitOps**| Yes               | Yes        | Yes            | Yes           | Yes                   | —                 | —                         | High             | Easy                           | —                     | —                           | —                                |
+| Tool            | UI Support | Integration              | Scalability     | Ease of Use                   | Installation         | Pricing                    | Best For                        |
+|-----------------|------------|---------------------------|------------------|--------------------------------|------------------------|-----------------------------|----------------------------------|
+| **Argo CD**     | Yes        | Kubernetes-native         | High             | User-friendly GUI             | Moderate complexity   | Open-source & paid options | Enterprises needing GUI         |
+| **Flux**        | Limited    | Kubernetes-native         | High             | Lightweight CLI               | Simple setup          | Fully open-source           | Lightweight users               |
+| **Jenkins X**   | Limited    | For Kubernetes            | Moderate         | Moderate complexity           | Complex               | Fully open-source           | CI/CD for Kubernetes            |
+| **Fleet**       | Yes        | Focused on clusters       | Very High        | GUI & CLI options             | Moderate setup         | Fully open-source           | Multi-cluster setups            |
+| **Spinnaker**   | Yes        | Multi-cloud flexibility   | High             | GUI-based, steep learning curve | High complexity       | Free & enterprise           | Large organizations             |
+| **Weave GitOps**| Yes        | Enterprise integrations   | High             | Easy                           | Moderate complexity   | Open-core, enterprise tier  | Enterprise-grade GitOps         |
 
 
 ## Conclusion
