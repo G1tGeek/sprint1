@@ -1,3 +1,4 @@
+
 # POC for DNS(Domain Name System)
 
 ## Author
@@ -11,7 +12,7 @@
 <summary>1. Introduction</summary>
 
 - [Introduction](#introduction)  
-
+- [DNS Documentation](#dns-documentatiion)
 </details>
 
 <details>
@@ -42,6 +43,10 @@
 ## Introduction
 
 This document provides a structured guide for configuring a custom domain purchased from Namecheap to point to an AWS EC2 instance using DNS (Domain Name System). Following a step-by-step approach, it walks through domain registration, DNS record setup, and validation, ensuring users can seamlessly link their domain to a cloud-hosted application.
+
+## DNS Documentation
+
+To get a detailed documentation for DNS [click here.]()
 
 ## Steps of conduct
 
@@ -99,16 +104,17 @@ This document provides a structured guide for configuring a custom domain purcha
 
 | Type     | Host | Value             | TTL       |
 | -------- | ---- | ----------------- | --------- |
-| A Record | @    | public-ip of application instance    | Automatic |
-| A Record    | www  | downtimecrew.xyz | Automatic |
+| A Record | @    | public-ip of application instance    | Automatic | # To bind instance with DNS
+| CNAME Record    | www  | downtimecrew.xyz | Automatic | # To make the webpage available with www.
 
 - Make sure that the service is up and running to the instance you're providing the public ip for
 
-![image](https://github.com/user-attachments/assets/6c20fd0e-1c2b-45ad-99dc-bfafdd329c93)
+![image](https://github.com/user-attachments/assets/d911cc61-5877-4750-83b1-a4c1d7ad2b2c)
 
 ### Step 10 
 
 *Visit your domain using your web browser to confirm the changes*
+(http://www.downtimecrew.xyz/) (http://downtimecrew.xyz/)
 
 ![image](https://github.com/user-attachments/assets/d0ced70b-a11c-4e1a-87a2-4e41cfac07fd)
 
